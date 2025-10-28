@@ -24,13 +24,13 @@
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
-            </ul>
+           <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#videos">Videos</a></li>  <li><a href="#contact" class="nav-cta">Contact</a></li>
+</ul>
         </div>
     </nav>
 
@@ -413,6 +413,55 @@
         </div>
     </section>
 
+    <section id="videos">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Demos & Tutorials</span>
+            <h2 class="section-title">Videos & Demos</h2>
+        </div>
+        <div class="articles-grid">
+            
+            <article class="video-card" data-video-key="sla-stage-2">
+                <div class="article-icon">
+                    <i class="fas fa-video"></i> 
+                </div>
+                <div class="article-content">
+                    <span class="article-date">
+                        <i class="far fa-calendar"></i> Demonstration
+                    </span>
+                    <h3>SLA Stage 2 - DWM</h3>
+                    <p>
+                        A demonstration of the second stage of the project, focusing on a deep dive into the 
+                        Data Warehouse Model (DWM) architecture and implementation details.
+                    </p>
+                    <a href="#" class="view-video">
+                        Watch Video <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="video-card" data-video-key="sla-stage-3">
+    <div class="article-icon">
+        <i class="fas fa-video"></i> 
+    </div>
+    <div class="article-content">
+        <span class="article-date">
+            <i class="far fa-calendar"></i> Reflection
+        </span>
+        <h3>SLA Stage 3 - DW</h3> <p>
+            A demonstration of the third stage of the project, both the stages and self reflaction for
+            Data Warehouse Model (DWM) architecture and implementation details.
+        </p>
+        <a href="#" class="view-video">
+            Watch Video <i class="fas fa-play-circle"></i>
+        </a>
+    </div>
+</article>
+            
+        </div>
+    </div>
+</section>
+
     <section id="contact">
         <div class="container">
             <div class="section-header">
@@ -525,5 +574,14 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <div id="video-modal" class="modal">
+    <div class="modal-content video-modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="video-modal-title"></h2>
+        <div id="video-modal-body" class="video-container">
+            </div>
+    </div>
+</div>
 </body>
 </html>
