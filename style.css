@@ -842,9 +842,13 @@ section {
     box-shadow: var(--shadow-glow);
 }
 
-/* ==================== Articles Section ==================== */
-#articles {
+/* ==================== Articles & Videos Section ==================== */
+#articles, #videos {
     background: var(--dark);
+}
+
+#videos {
+    background: var(--dark-100); /* Slightly darker background for video section */
 }
 
 .articles-grid {
@@ -855,7 +859,7 @@ section {
     /* Removed the 'justify-content: center' which was for the single card */
 }
 
-.article-card {
+.article-card, .video-card {
     background: var(--dark-card);
     border: 1px solid var(--dark-300);
     border-radius: 16px;
@@ -865,7 +869,7 @@ section {
     flex-direction: column;
 }
 
-.article-card:hover {
+.article-card:hover, .video-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-glow);
     border-color: var(--cyber-pink);
@@ -894,21 +898,21 @@ section {
     margin-bottom: 1rem;
 }
 
-.article-card h3 {
+.article-card h3, .video-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--white);
     margin-bottom: 1rem;
 }
 
-.article-card p {
+.article-card p, .video-card p {
     color: var(--gray);
     line-height: 1.7;
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
-.read-more {
+.read-more, .view-video {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -917,9 +921,10 @@ section {
     font-weight: 600;
     font-size: 0.95rem;
     transition: var(--transition);
+    cursor: pointer;
 }
 
-.read-more:hover {
+.read-more:hover, .view-video:hover {
     gap: 0.75rem;
     text-shadow: 0 0 10px var(--cyber-pink);
 }
@@ -1130,6 +1135,36 @@ footer {
 
 .footer-bottom i {
     color: var(--cyber-pink);
+}
+
+/* Video Modal Specific Styles */
+.video-modal-content {
+    /* Ensures the video modal content area is wide enough for 16:9 content */
+    max-width: 1000px;
+}
+
+/* This is the critical container for the video aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%;
+    /* 16:9 aspect ratio (100 / 16 * 9 = 56.25) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    /* FIX: Add margin-top to separate it from the title bar */
+    margin-top: 2rem; 
+    box-shadow: var(--shadow-glow); /* Add shadow for visual effect */
+    border-radius: 10px;
+}
+
+/* This ensures the iframe fills the space created by .video-container */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* ==================== Responsive Design ==================== */
