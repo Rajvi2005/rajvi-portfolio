@@ -105,15 +105,15 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections and cards
-document.querySelectorAll('section, .project-card, .skill-category, .article-card').forEach(el => {
+// Observe all sections and cards, including the new .video-card
+document.querySelectorAll('section, .project-card, .skill-category, .article-card, .video-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
 });
 
-// ==================== Article Modal Functionality ====================
+// ==================== Article Modal Data ====================
 const articleData = {
     'etl': {
         title: 'The ETL Process: Extract, Transform, and Load Explained',
@@ -193,7 +193,7 @@ const articleData = {
             
             <h4>Types of Testing: Structure vs. Function</h4>
             <ul>
-                <li>**Black-Box Testing:** Focuses on functionality only (like an end-user).</li>
+                <li>**Black-Box Testing:** Focuss on functionality only (like an end-user).</li>
                 <li>**White-Box Testing:** Requires knowledge of the internal code structure and logic (used by developers).</li>
                 <li>**Gray-Box Testing:** A combination, using some knowledge of internal structure but testing externally.</li>
             </ul>
@@ -279,23 +279,61 @@ const articleData = {
     }
 };
 
+// ==================== Video Modal Data (NEW) ====================
+const videoData = {
+    'sla-stage-2': {
+        title: 'SLA Stage 2 - DWM',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1-YHfhVrcoy8CspynLPN4GlDYKQ49Qmyw/preview' 
+    },
+    'sla-stage-3': {
+        title: 'SLA Stage 3 - DWM',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1XyiyNYVVyUqWHs8O0ip3n0ToLxE9poIy/preview' 
+    }
+    // ... add more videos here later:
+};  
+
 // Define keys in the order they appear in the HTML
 const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity']; 
 
-// Create modal HTML (add this once on page load)
-document.addEventListener('DOMContentLoaded', () => {
-    const modalHTML = `
-        <div id="article-modal" class="modal">
-            <div class="modal-content">
-                <span class="modal-close">&times;</span>
-                <h2 id="modal-title"></h2>
-                <div id="modal-body"></div>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
+// Utility function to close all modals and stop video playback
+function closeModal() {
+    const articleModal = document.getElementById('article-modal');
+    const videoModal = document.getElementById('video-modal');
+
+    if (articleModal) articleModal.style.display = 'none';
+    if (videoModal) videoModal.style.display = 'none';
     
-    // Add modal styles (The CSS block remains the same as provided in previous steps)
+    document.body.style.overflow = 'auto';
+    
+    // Stop the video from playing when the modal closes
+    const videoBody = document.getElementById('video-modal-body');
+    if (videoBody) {
+        // Clearing the iframe src stops the playback
+        videoBody.innerHTML = '';
+    }
+}
+
+// ==================== Modal Initialization and Handlers ====================
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Safety check: ensure article modal is available for the original logic
+    const articleModalElement = document.getElementById('article-modal');
+    if (!articleModalElement) {
+        const modalHTML = `
+            <div id="article-modal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close article-close">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-body"></div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    // Add modal styles (The original script did this via a <style> tag, mimicking that here for safety)
     const style = document.createElement('style');
     style.textContent = `
         .modal {
@@ -308,6 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: 100%;
             background-color: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
         }
         
@@ -322,6 +361,21 @@ document.addEventListener('DOMContentLoaded', () => {
             box-shadow: var(--shadow-glow);
             animation: slideDown 0.3s ease-out;
         }
+
+        .video-modal-content {
+            max-width: 1000px !important;
+            background: var(--dark-100) !important; 
+            padding: 2rem !important;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+        }
         
         .modal-close {
             color: var(--gray);
@@ -330,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
             font-weight: bold;
             line-height: 1;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .modal-close:hover {
@@ -338,19 +392,19 @@ document.addEventListener('DOMContentLoaded', () => {
             text-shadow: 0 0 10px var(--cyber-pink);
         }
         
-        #modal-title {
+        #modal-title, #video-modal-title {
             color: var(--white);
-            font-family: var(--font-display);
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             margin-bottom: 2rem;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
         #modal-body {
-            color: var(--gray);
+            color: #94a3b8;
             line-height: 1.8;
         }
         
@@ -362,32 +416,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         #modal-body h4 {
-            color: var(--cyber-pink);
+            color: #ff006e;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
-        
-        #modal-body p {
-            margin-bottom: 1.5rem;
-        }
-        
-        #modal-body ul {
-            margin: 1rem 0 1.5rem 2rem;
-            color: var(--gray);
-        }
-        
-        #modal-body li {
-            margin-bottom: 0.5rem;
-        }
-        
-        #modal-body strong {
-            color: var(--cyber-pink);
-        }
-        
+
         #modal-body blockquote {
-            background: rgba(var(--cyber-pink-rgb), 0.1);
-            border-left: 5px solid var(--cyber-pink);
+            background: rgba(255, 0, 110, 0.1);
+            border-left: 5px solid #ff006e;
             padding: 1rem 1.5rem;
             margin: 1rem 0;
             color: var(--white);
@@ -395,13 +432,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
-    
-    // Handle article link clicks
+
+
+    // 1. Article Modal Handler (Existing functionality)
     document.querySelectorAll('.read-more').forEach((link, index) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            // Use the index of the clicked link to get the correct key
-            const articleKey = articleKeys[index];
+            const articleKey = link.dataset.articleKey || articleKeys[index];
             const article = articleData[articleKey];
             
             if (article) {
@@ -413,20 +450,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal
-    const modal = document.getElementById('article-modal');
-    const closeBtn = document.querySelector('.modal-close');
+    // 2. Video Modal Handler (NEW functionality)
+    document.querySelectorAll('.view-video').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const videoCard = link.closest('.video-card');
+            const videoKey = videoCard.dataset.videoKey;
+            const video = videoData[videoKey];
+
+            if (video) {
+                const videoModal = document.getElementById('video-modal');
+                const videoTitle = document.getElementById('video-modal-title');
+                const videoBody = document.getElementById('video-modal-body');
+                
+                // Set Title
+                if(videoTitle) videoTitle.textContent = video.title;
+                
+                // Embed Video
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', video.iframeSrc);
+                iframe.setAttribute('width', '100%');
+                iframe.setAttribute('height', '100%');
+                iframe.setAttribute('allow', 'autoplay');
+                iframe.setAttribute('allowfullscreen', '');
+                
+                // Clear and insert iframe
+                if(videoBody) {
+                    videoBody.innerHTML = '';
+                    videoBody.appendChild(iframe);
+                }
+                
+                // Show modal
+                if(videoModal) {
+                    videoModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        });
+    });
+
+    // 3. General Modal Closing Logic
+    const modals = [document.getElementById('article-modal'), document.getElementById('video-modal')];
     
-    closeBtn.onclick = () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    };
+    // Close modal via the 'x' button
+    document.querySelectorAll('.modal-close').forEach(btn => {
+        btn.onclick = closeModal;
+    });
     
+    // Close modal when clicking outside of it
     window.onclick = (event) => {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+        modals.forEach(modal => {
+            if (modal && event.target == modal) {
+                closeModal();
+            }
+        });
     };
 });
 
@@ -447,9 +524,9 @@ if (contactForm) {
 }
 
 // ==================== Dynamic Year in Footer ====================
-const currentYear = new Date().getFullYear();
-const footerParagraph = document.querySelector('.footer-bottom p');
+const footerParagraph = document.querySelector('footer .footer-bottom p:first-child');
 if (footerParagraph) {
-    // Assuming the paragraph inside .footer-bottom is the one you want to update
-    footerParagraph.textContent = `© ${currentYear} Rajvi. All rights reserved.`;
+    const currentYear = new Date().getFullYear();
+    // Safely update the year in the copyright text
+    footerParagraph.textContent = footerParagraph.textContent.replace(/© \d{4}/, `© ${currentYear}`);
 }
