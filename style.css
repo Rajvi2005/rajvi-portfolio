@@ -848,17 +848,11 @@ section {
 }
 
 .articles-grid {
-    /* Updated for single card centering */
+    /* Reverted to original multi-column grid settings */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    /* New: Center a single card when it's the only one */
-    justify-content: center; 
-}
-
-.single-article {
-    /* Ensures the card doesn't stretch across the whole grid when there's only one */
-    max-width: 600px;
+    /* Removed the 'justify-content: center' which was for the single card */
 }
 
 .article-card {
