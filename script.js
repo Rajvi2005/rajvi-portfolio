@@ -115,12 +115,10 @@ document.querySelectorAll('section, .project-card, .skill-category, .article-car
 
 // ==================== Article Modal Functionality ====================
 const articleData = {
-    // ONLY ONE ARTICLE IS KEPT AND UPDATED: 'etl'
     'etl': {
         title: 'The ETL Process: Extract, Transform, and Load Explained',
         content: `
             <p>In today’s data-driven world, organizations depend on accurate, consistent, and well-structured data for making important business decisions. At the core of every successful data warehouse or business intelligence system is the **ETL process**.</p>
-            
             <p>ETL stands for **Extract, Transform, and Load**. It is the process of collecting data from various sources, cleaning and structuring it, and storing it in a data warehouse for analysis. Understanding ETL is vital for anyone involved in data warehousing, analytics, or data engineering, as it lays the groundwork for reliable and insightful data-driven systems.</p>
             
             <h3>1. What is ETL?</h3>
@@ -133,81 +131,156 @@ const articleData = {
             <p>Each phase has a unique and important role in ensuring the data is accurate, consistent, and usable.</p>
             
             <h3>2. Step-by-Step Breakdown of the ETL Process</h3>
-            
             <h4>Step 1: Extract</h4>
-            <p>Data extraction involves pulling raw data from multiple, often diverse sources. These sources can include:</p>
-            <ul>
-                <li>Operational databases (like MySQL, Oracle, or PostgreSQL)</li>
-                <li>ERP or CRM systems (such as SAP or Salesforce)</li>
-                <li>Cloud platforms (like AWS S3, Google Cloud Storage, or Azure Data Lake)</li>
-                <li>Flat files or spreadsheets (CSV, Excel)</li>
-            </ul>
-            <p>At this stage, data quality issues such as duplicates or missing values may be present. The goal is to collect all relevant data efficiently without making changes yet.</p>
-            
+            <p>Data extraction involves pulling raw data from multiple, often diverse sources. These sources can include: Operational databases (like MySQL, Oracle, or PostgreSQL), ERP or CRM systems, Cloud platforms, and Flat files or spreadsheets. The goal is to collect all relevant data efficiently without making changes yet.</p>
             <blockquote>Example: A retail company extracts daily sales data from its e-commerce website, inventory details from its ERP system, and customer information from its CRM platform.</blockquote>
-            
             <h4>Step 2: Transform</h4>
-            <p>Transformation is the core of the ETL process. It involves cleaning and restructuring data to ensure it meets the requirements of the target data warehouse.</p>
-            <p>Common transformation tasks include:</p>
-            <ul>
-                <li><strong>Data Cleaning:</strong> Removing duplicates, fixing typos, and handling missing values.</li>
-                <li><strong>Data Integration:</strong> Merging data from different sources into a single view.</li>
-                <li><strong>Data Aggregation:</strong> Summarizing data for easier analysis (for example, converting daily sales to monthly totals).</li>
-                <li><strong>Data Formatting:</strong> Changing data types, units, or naming conventions for consistency.</li>
-                <li><strong>Data Validation:</strong> Ensuring the data meets quality standards and business logic.</li>
-            </ul>
-            
-            <blockquote>Example: The retail company converts all timestamps to a standard format (UTC), combines regional sales tables, and calculates profit margins before the data is loaded.</blockquote>
-            
-            <p>This phase often uses data transformation tools such as Apache Spark, Talend, Pentaho, or Informatica. Many cloud-based data pipelines, such as AWS Glue or Google Dataflow, also provide built-in ETL features.</p>
-            
+            <p>Transformation is the core of the ETL process. It involves cleaning and restructuring data. Common tasks include: **Data Cleaning** (removing duplicates), **Data Integration** (merging data), **Data Aggregation** (summarizing data), and **Data Validation**. This phase often uses data transformation tools such as Apache Spark, Talend, or AWS Glue.</p>
             <h4>Step 3: Load</h4>
-            <p>The final stage involves loading the transformed data into the destination, usually a data warehouse such as Snowflake, Amazon Redshift, Google BigQuery, or Microsoft Azure Synapse.</p>
-            <p>Depending on the needs of the organization, there are two main types of loading:</p>
-            <ul>
-                <li><strong>Full Load:</strong> Loading all data from scratch (commonly used during initial setups).</li>
-                <li><strong>Incremental Load:</strong> Loading only new or changed data since the last update (typically used in production systems).</li>
-            </ul>
-            <p>The goal is to keep the warehouse up to date and optimized for analytical queries, dashboards, and reports.</p>
+            <p>The final stage involves loading the transformed data into the destination, usually a data warehouse. Types include **Full Load** and **Incremental Load**. The goal is to keep the warehouse up to date and optimized for analytical queries.</p>
 
             <h3>3. Why ETL Matters in Modern Data Warehousing</h3>
-            <p>The ETL process is not just a technical routine. It is a key driver for business intelligence. Without ETL, organizations would struggle to manage data that is spread across different platforms and formats.</p>
-            <p>Here’s why ETL is essential:</p>
-            <ul>
-                <li><strong>Data Consistency:</strong> Ensures uniformity across departments and systems.</li>
-                <li><strong>Improved Decision-Making:</strong> Clean, reliable data allows for accurate reporting and forecasting.</li>
-                <li><strong>Automation and Efficiency:</strong> Reduces the need for manual work in data preparation.</li>
-                <li><strong>Scalability:</strong> Modern ETL tools can handle large datasets from IoT, web analytics, and enterprise systems.</li>
-                <li><strong>Compliance and Governance:</strong> Helps enforce data policies, privacy rules, and audit trails.</li>
-            </ul>
-            <p>In short, ETL connects raw operational data with actionable insights.</p>
+            <p>ETL is a key driver for business intelligence, providing **Data Consistency**, **Improved Decision-Making**, **Automation**, **Scalability**, and **Compliance**. ETL connects raw operational data with actionable insights.</p>
             
             <h3>4. Real-World Applications of ETL</h3>
-            <ul>
-                <li><strong>Business Intelligence (BI):</strong> Organizations use ETL to supply dashboards and reports created with tools like Power BI, Tableau, or Looker.</li>
-                <li><strong>Healthcare Analytics:</strong> Hospitals combine data from electronic health records (EHRs) and other sources to monitor patient outcomes.</li>
-                <li><strong>Banking and Finance:</strong> Banks perform ETL to consolidate customer transactions, detect fraud patterns, and comply with regulatory requirements.</li>
-                <li><strong>E-Commerce:</strong> Retailers integrate sales, inventory, and customer data to forecast demand and design marketing campaigns.</li>
-            </ul>
-
-            <h3>5. Tools Commonly Used in ETL</h3>
-            <p>Some popular choices include:</p>
-            <ul>
-                <li><strong>Apache NiFi:</strong> Open-source tool for automating data flows.</li>
-                <li><strong>Talend:</strong> Enterprise data integration and transformation platform.</li>
-                <li><strong>Pentaho Data Integration (PDI):</strong> Known for its visual data flow designer.</li>
-                <li><strong>AWS Glue, Airbyte, and Fivetran:</strong> Modern cloud and automated data ingestion tools.</li>
-            </ul>
-            <p>Choosing the right tool depends on the data volume, complexity, and real-time needs of the organization.</p>
-            
-            <h3>6. The Evolution of ETL: From Batch to Real-Time</h3>
-            <p>Traditionally, ETL involved batch processing. Today, it has evolved into **ELT** (Extract, Load, Transform), where data is loaded first and then transformed using the data warehouse's processing power. Modern pipelines also support streaming data with tools like Kafka or Spark Streaming.</p>
+            <p>Applications include **Business Intelligence**, **Healthcare Analytics**, **Banking and Finance**, and **E-Commerce**, where clean, reliable data is essential for accurate forecasting and strategy.</p>
             
             <h3>7. Conclusion</h3>
             <p>The ETL process is one of the most essential elements of data warehousing and analytics. A well-designed ETL pipeline not only improves data quality but also leads to faster insights, smarter strategies, and better business performance.</p>
         `
+    },
+    'digital-forensics': {
+        title: 'Digital Forensics Using Kali Linux: A Comprehensive Guide',
+        content: `
+            <p>In today's connected world, every digital footprint tells a story. A deleted file, a network trace, or a suspicious log entry can become a crucial clue in uncovering cybercrimes. Kali Linux remains one of the most trusted environments for professional digital investigations.</p>
+            
+            <h3>1. What Is Digital Forensics?</h3>
+            <p>Digital forensics is the practice of collecting, preserving, analyzing, and reporting electronic evidence while maintaining legal admissibility. It answers: What happened? How did it happen? What data was impacted? The golden rule: **never modify original evidence**.</p>
+            
+            <h3>2. Evidence Acquisition (Preservation First)</h3>
+            <p>The key step is to **create a bit-for-bit image** of storage media before analysis. Integrity is verified with hashes, and detailed timestamps must be documented to maintain the **chain of custody**. Any break can make evidence inadmissible.</p>
+            
+            <h3>3. File System Analysis (Finding Signals)</h3>
+            <p>Investigators use tools like **Autopsy** and **The Sleuth Kit** to reconstruct user activity, recover deleted items, and extract artifacts like browser history. Hash filtering helps separate known-good files from suspicious ones.</p>
+            
+            <h3>4. Data Carving & Recovery</h3>
+            <p>When metadata is destroyed, files are "carved" by signature using tools like **Foremost** or **Scalpel** to recover critical files (PDFs, images, docs). Recovered fragments can still prove exfiltration intent.</p>
+            
+            <h3>5. Memory & Network Forensics</h3>
+            <p>Disk shows the past; **RAM shows the present**. Tools like **Volatility** analyze memory for processes and credentials. **Wireshark** or **NetworkMiner** reconstruct network sessions to spot C2 traffic or data exfiltration. Combining all three yields a complete narrative.</p>
+            
+            <h3>6. Reporting (Turning Evidence into Action)</h3>
+            <p>A defensible forensic report must be clear and neutral, detailing the **scope, tools, acquisition details with hashes**, and **findings with timelines**. Clarity and a solid chain of custody are paramount.</p>
+            
+            <h3>9. Conclusion</h3>
+            <p>Digital forensics combines rigor, patience, and curiosity. With Kali Linux and sound methodology, every log line, packet, and artifact can bring you closer to the truth. Start small, document everything, and let the evidence tell the story.</p>
+        `
+    },
+    'software-testing': {
+        title: 'The Critical Role of Software Testing in the Modern IT Industry',
+        content: `
+            <p>The true measure of a software product's success isn't how fast it was built, but how **reliably** it serves its users. This places **Software Testing** as a critical, ongoing process that underpins the entire modern IT industry. Testing is the quality gate that ensures the final product is functional, secure, performant, and delightful to use.</p>
+
+            <h3>Understanding the Core Concepts of Testing</h3>
+            
+            <h4>Levels of Testing: From Unit to Acceptance</h4>
+            <ul>
+                <li>**Unit Testing:** Granular level, testing individual components in isolation.</li>
+                <li>**Integration Testing:** Ensures units work correctly when combined (e.g., checking database communication).</li>
+                <li>**System Testing:** Verifies the complete, integrated system meets all specified requirements (end-to-end scenarios).</li>
+                <li>**Acceptance Testing (UAT):** Final stage, often by end-users, to ensure the system satisfies business requirements.</li>
+            </ul>
+            
+            <h4>Types of Testing: Structure vs. Function</h4>
+            <ul>
+                <li>**Black-Box Testing:** Focuses on functionality only (like an end-user).</li>
+                <li>**White-Box Testing:** Requires knowledge of the internal code structure and logic (used by developers).</li>
+                <li>**Gray-Box Testing:** A combination, using some knowledge of internal structure but testing externally.</li>
+            </ul>
+
+            <h3>Real-Life Applications Across the IT Industry</h3>
+            <p>Testing is the glue that holds all IT sectors together, mitigating risks from minor inconvenience to catastrophic failure.</p>
+            
+            <h4>Importance in Financial and Healthcare Sectors</h4>
+            <p>**Banking and Finance** require automated regression testing to prevent errors in transaction logic. **Healthcare** demands life-critical system testing for EHRs and medical devices to ensure accurate data exchange and patient safety.</p>
+            
+            <h4>Role in E-Commerce and Cloud Services</h4>
+            <p>**E-Commerce** relies on **Performance Testing** (stress and load testing) to handle peak traffic. **Cloud Services** (SaaS) require rigorous **Security Testing** (penetration testing) to protect user data and ensure service availability.</p>
+
+            <h3>Why Testing is Fundamental to Computer Science and Business</h3>
+            <p>Testing drives discipline and reduces overall project costs.</p>
+            
+            <h4>Impact on Software Engineering Quality</h4>
+            <p>The need to write **testable code** encourages better software design, leading to modular, maintainable, and scalable codebases. It is crucial for **Risk Mitigation**, as the cost of fixing a bug increases exponentially the later it is discovered.</p>
+            
+            <h4>Business and Project Management Value</h4>
+            <p>Testing ensures **Customer Satisfaction** and enables **Agile and DevOps**. Rapid deployment is only possible because of **continuous testing** and automation, which prevent instability.</p>
+
+            <p>In conclusion, software testing has evolved into a continuous, integrated discipline—the professional guardian of quality that ensures every line of code performs as promised.</p>
+        `
+    },
+    'finite-automata': {
+        title: 'The Foundational Power of Finite Automata: Pattern Recognition in Computing',
+        content: `
+            <p>The **Finite Automaton (FA)**, a fundamental structure from discrete mathematics, is the simplest model in the Theory of Computation. Built on states and transitions, it’s an abstract machine designed to recognize patterns within strings of symbols. This core concept explains how search engines highlight keywords and how compilers validate code structure.</p>
+
+            <h3>Conceptual Breakdown: States, Transitions, and Memory Limits</h3>
+            
+            <h4>The Core Mechanics of an FA</h4>
+            <p>An FA exists in a **fixed number of states** and reads input symbols sequentially. Based on its current state and the input, it moves to the next state. Crucially, the FA has **no extra memory**; it only remembers its current state. If it finishes reading the input and lands in an **accepting state**, the pattern is recognized.</p>
+            
+            <h4>DFA vs. NFA</h4>
+            <p>The **Deterministic Finite Automaton (DFA)** has exactly one defined transition for every input symbol. The **Non-deterministic Finite Automaton (NFA)** allows for multiple transitions for the same symbol, offering flexibility. NFAs are often converted to equivalent DFAs for **efficient execution**.</p>
+
+            <h3>Real-Life Applications: Text Search and Regular Expressions</h3>
+            
+            <h4>Blazing-Fast String Searching</h4>
+            <p>FA models are used in basic **"Find" functions** in text editors. A dedicated DFA is constructed to recognize the search term, providing **blazing-fast, linear-time performance** because the next action is always known instantly.</p>
+            
+            <h4>The Engine Behind Regular Expressions (Regex)</h4>
+            <p>**Regular Expressions (regex)** are the algebraic notation programmers use to define complex text patterns (like validating emails). Every regex can be formally translated into an equivalent DFA. This conversion replaces inefficient backtracking with a **highly efficient, predictable state machine**. Modern compilers, editors, and command-line tools rely on this mechanism.</p>
+            
+            <h3>Importance in Computer Science and IT</h3>
+            
+            <h4>Defining Computational Limits</h4>
+            <p>FAs define **regular languages**, the simplest languages a machine can recognize. Understanding what an FA **cannot** do (e.g., it cannot count arbitrary amounts of information) provides insight into the necessary complexity for solving other problems.</p>
+            
+            <h4>Compiler Design and Security</h4>
+            <p>In **compiler design**, the FA is perfectly suited for **lexical analysis**, the initial phase where the compiler identifies **tokens** (keywords, variables). This ensures predictable, reliable speed. In **network security**, high-speed applications like **Intrusion Detection Systems (IDS)** use automata to rapidly check network packets against databases of known attack signatures in real time.</p>
+        `
+    },
+    'ai-cybersecurity': {
+        title: 'The Transformative Role of AI in Modern Cybersecurity',
+        content: `
+            <p>In the relentless, evolving landscape of cyber threats, traditional, signature-based defenses are struggling to keep pace. **Artificial Intelligence (AI)** and **Machine Learning (ML)** are foundational elements driving the next generation of cybersecurity practices by shifting defense from reactive to proactive.</p>
+
+            <h3>Core Applications of AI in Cybersecurity</h3>
+            
+            <h4>1. Enhanced Threat Detection and Anomaly Hunting</h4>
+            <p>AI establishes a **User and Entity Behavior Analytics (UEBA)** baseline of "normal" activity to detect subtle, statistically significant deviations. **Malware Analysis** uses ML models to analyze file properties and determine the probability of a threat, even if the signature is new.</p>
+            
+            <h4>2. Automated Incident Response (SOAR)</h4>
+            <p>AI provides the intelligence layer for **Security Orchestration, Automation, and Response (SOAR)** platforms. It automatically handles **Triage and Prioritization** of alerts and executes **Automated Containment** actions (like isolating an endpoint), cutting the Mean Time to Respond (MTTR).</p>
+            
+            <h4>3. Intelligent Vulnerability Management</h4>
+            <p>AI helps prioritize patching based on the **Risk-Based Prioritization**—analyzing asset nature, threat intelligence, and typical attacker patterns—to focus on the *actual business risk* posed by a vulnerability.</p>
+
+            <h3>Importance and Impact on the IT Industry</h3>
+            <p>AI addresses the industry's biggest challenges: data volume and the skills gap.</p>
+            
+            <h4>Driving Operational Efficiency</h4>
+            <p>AI enables **Scalability** to monitor trillions of events, a task impossible for human teams alone. By automating routine work, it allows skilled analysts to focus on complex threat hunting, **Focusing Human Talent** effectively.</p>
+            
+            <h4>The Future of Defensive Security</h4>
+            <p>AI will evolve into a collaborative defense partner, enabling **Predictive Defense** by anticipating attack types before they are launched. It will also be essential for securing emerging technologies like quantum computing and vast IoT systems (**Security for AI**).</p>
+
+            <p>In conclusion, the integration of AI is the only scalable, intelligent solution capable of confronting contemporary digital threats, making it crucial for survival and competitive edge in the modern IT world.</p>
+        `
     }
 };
+
+// Define keys in the order they appear in the HTML
+const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity']; 
 
 // Create modal HTML (add this once on page load)
 document.addEventListener('DOMContentLoaded', () => {
@@ -222,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     
-    // Add modal styles
+    // Add modal styles (The CSS block remains the same as provided in previous steps)
     const style = document.createElement('style');
     style.textContent = `
         .modal {
@@ -324,13 +397,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
     
     // Handle article link clicks
-    // Only target the first .read-more link to open the single 'etl' article
-    const firstReadMoreLink = document.querySelector('.read-more');
-
-    if (firstReadMoreLink) {
-        firstReadMoreLink.addEventListener('click', (e) => {
+    document.querySelectorAll('.read-more').forEach((link, index) => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const article = articleData['etl']; // Always use the 'etl' key
+            // Use the index of the clicked link to get the correct key
+            const articleKey = articleKeys[index];
+            const article = articleData[articleKey];
             
             if (article) {
                 document.getElementById('modal-title').textContent = article.title;
@@ -339,13 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'hidden';
             }
         });
-    }
+    });
 
-    // You may need to update your HTML to only have one article card,
-    // or update this logic to associate each link with the 'etl' key.
-    // The current implementation is set up to only use the FIRST .read-more link.
-
-    
     // Close modal
     const modal = document.getElementById('article-modal');
     const closeBtn = document.querySelector('.modal-close');
