@@ -118,8 +118,8 @@ const articleData = {
     'etl': {
         title: 'The ETL Process: Extract, Transform, and Load Explained',
         content: `
-            <p>In today’s data-driven world, organizations depend on accurate, consistent, and well-structured data for making important business decisions. At the core of every successful data warehouse or business intelligence system is the **ETL process**.</p>
-            <p>ETL stands for **Extract, Transform, and Load**. It is the process of collecting data from various sources, cleaning and structuring it, and storing it in a data warehouse for analysis. Understanding ETL is vital for anyone involved in data warehousing, analytics, or data engineering, as it lays the groundwork for reliable and insightful data-driven systems.</p>
+            <p>In today’s data-driven world, organizations depend on accurate, consistent, and well-structured data for making important business decisions. At the core of every successful data warehouse or business intelligence system is the ETL process.</p>
+            <p>ETL stands for Extract, Transform, and Load. It is the process of collecting data from various sources, cleaning and structuring it, and storing it in a data warehouse for analysis. Understanding ETL is vital for anyone involved in data warehousing, analytics, or data engineering, as it lays the groundwork for reliable and insightful data-driven systems.</p>
             
             <h3>1. What is ETL?</h3>
             <p>The ETL process is a data integration workflow that moves data from different sources into a single place, such as a data warehouse.</p>
@@ -135,15 +135,15 @@ const articleData = {
             <p>Data extraction involves pulling raw data from multiple, often diverse sources. These sources can include: Operational databases (like MySQL, Oracle, or PostgreSQL), ERP or CRM systems, Cloud platforms, and Flat files or spreadsheets. The goal is to collect all relevant data efficiently without making changes yet.</p>
             <blockquote>Example: A retail company extracts daily sales data from its e-commerce website, inventory details from its ERP system, and customer information from its CRM platform.</blockquote>
             <h4>Step 2: Transform</h4>
-            <p>Transformation is the core of the ETL process. It involves cleaning and restructuring data. Common tasks include: **Data Cleaning** (removing duplicates), **Data Integration** (merging data), **Data Aggregation** (summarizing data), and **Data Validation**. This phase often uses data transformation tools such as Apache Spark, Talend, or AWS Glue.</p>
+            <p>Transformation is the core of the ETL process. It involves cleaning and restructuring data. Common tasks include: Data Cleaning (removing duplicates), Data Integration (merging data), **Data Aggregation** (summarizing data), and Data Validation. This phase often uses data transformation tools such as Apache Spark, Talend, or AWS Glue.</p>
             <h4>Step 3: Load</h4>
-            <p>The final stage involves loading the transformed data into the destination, usually a data warehouse. Types include **Full Load** and **Incremental Load**. The goal is to keep the warehouse up to date and optimized for analytical queries.</p>
+            <p>The final stage involves loading the transformed data into the destination, usually a data warehouse. Types include Full Load and Incremental Load. The goal is to keep the warehouse up to date and optimized for analytical queries.</p>
 
             <h3>3. Why ETL Matters in Modern Data Warehousing</h3>
-            <p>ETL is a key driver for business intelligence, providing **Data Consistency**, **Improved Decision-Making**, **Automation**, **Scalability**, and **Compliance**. ETL connects raw operational data with actionable insights.</p>
+            <p>ETL is a key driver for business intelligence, providing Data Consistency, Improved Decision-Making, Automation, Scalability, and Compliance. ETL connects raw operational data with actionable insights.</p>
             
             <h3>4. Real-World Applications of ETL</h3>
-            <p>Applications include **Business Intelligence**, **Healthcare Analytics**, **Banking and Finance**, and **E-Commerce**, where clean, reliable data is essential for accurate forecasting and strategy.</p>
+            <p>Applications include Business Intelligence, Healthcare Analytics, Banking and Finance, and E-Commerce, where clean, reliable data is essential for accurate forecasting and strategy.</p>
             
             <h3>7. Conclusion</h3>
             <p>The ETL process is one of the most essential elements of data warehousing and analytics. A well-designed ETL pipeline not only improves data quality but also leads to faster insights, smarter strategies, and better business performance.</p>
@@ -155,22 +155,22 @@ const articleData = {
             <p>In today's connected world, every digital footprint tells a story. A deleted file, a network trace, or a suspicious log entry can become a crucial clue in uncovering cybercrimes. Kali Linux remains one of the most trusted environments for professional digital investigations.</p>
             
             <h3>1. What Is Digital Forensics?</h3>
-            <p>Digital forensics is the practice of collecting, preserving, analyzing, and reporting electronic evidence while maintaining legal admissibility. It answers: What happened? How did it happen? What data was impacted? The golden rule: **never modify original evidence**.</p>
+            <p>Digital forensics is the practice of collecting, preserving, analyzing, and reporting electronic evidence while maintaining legal admissibility. It answers: What happened? How did it happen? What data was impacted? The golden rule: never modify original evidence.</p>
             
             <h3>2. Evidence Acquisition (Preservation First)</h3>
-            <p>The key step is to **create a bit-for-bit image** of storage media before analysis. Integrity is verified with hashes, and detailed timestamps must be documented to maintain the **chain of custody**. Any break can make evidence inadmissible.</p>
+            <p>The key step is to create a bit-for-bit image of storage media before analysis. Integrity is verified with hashes, and detailed timestamps must be documented to maintain the chain of custody. Any break can make evidence inadmissible.</p>
             
             <h3>3. File System Analysis (Finding Signals)</h3>
-            <p>Investigators use tools like **Autopsy** and **The Sleuth Kit** to reconstruct user activity, recover deleted items, and extract artifacts like browser history. Hash filtering helps separate known-good files from suspicious ones.</p>
+            <p>Investigators use tools like Autopsy and The Sleuth Kit to reconstruct user activity, recover deleted items, and extract artifacts like browser history. Hash filtering helps separate known-good files from suspicious ones.</p>
             
             <h3>4. Data Carving & Recovery</h3>
-            <p>When metadata is destroyed, files are "carved" by signature using tools like **Foremost** or **Scalpel** to recover critical files (PDFs, images, docs). Recovered fragments can still prove exfiltration intent.</p>
+            <p>When metadata is destroyed, files are "carved" by signature using tools like Foremost or Scalpel to recover critical files (PDFs, images, docs). Recovered fragments can still prove exfiltration intent.</p>
             
             <h3>5. Memory & Network Forensics</h3>
-            <p>Disk shows the past; **RAM shows the present**. Tools like **Volatility** analyze memory for processes and credentials. **Wireshark** or **NetworkMiner** reconstruct network sessions to spot C2 traffic or data exfiltration. Combining all three yields a complete narrative.</p>
+            <p>Disk shows the past; RAM shows the present. Tools like Volatility analyze memory for processes and credentials. Wireshark or NetworkMiner reconstruct network sessions to spot C2 traffic or data exfiltration. Combining all three yields a complete narrative.</p>
             
             <h3>6. Reporting (Turning Evidence into Action)</h3>
-            <p>A defensible forensic report must be clear and neutral, detailing the **scope, tools, acquisition details with hashes**, and **findings with timelines**. Clarity and a solid chain of custody are paramount.</p>
+            <p>A defensible forensic report must be clear and neutral, detailing the scope, tools, acquisition details with hashes, and findings with timelines. Clarity and a solid chain of custody are paramount.</p>
             
             <h3>9. Conclusion</h3>
             <p>Digital forensics combines rigor, patience, and curiosity. With Kali Linux and sound methodology, every log line, packet, and artifact can bring you closer to the truth. Start small, document everything, and let the evidence tell the story.</p>
@@ -179,42 +179,42 @@ const articleData = {
     'software-testing': {
         title: 'The Critical Role of Software Testing in the Modern IT Industry',
         content: `
-            <p>The true measure of a software product's success isn't how fast it was built, but how **reliably** it serves its users. This places **Software Testing** as a critical, ongoing process that underpins the entire modern IT industry. Testing is the quality gate that ensures the final product is functional, secure, performant, and delightful to use.</p>
+            <p>The true measure of a software product's success isn't how fast it was built, but how reliably it serves its users. This places Software Testing as a critical, ongoing process that underpins the entire modern IT industry. Testing is the quality gate that ensures the final product is functional, secure, performant, and delightful to use.</p>
 
             <h3>Understanding the Core Concepts of Testing</h3>
             
             <h4>Levels of Testing: From Unit to Acceptance</h4>
             <ul>
-                <li>**Unit Testing:** Granular level, testing individual components in isolation.</li>
-                <li>**Integration Testing:** Ensures units work correctly when combined (e.g., checking database communication).</li>
-                <li>**System Testing:** Verifies the complete, integrated system meets all specified requirements (end-to-end scenarios).</li>
-                <li>**Acceptance Testing (UAT):** Final stage, often by end-users, to ensure the system satisfies business requirements.</li>
+                <li>Unit Testing: Granular level, testing individual components in isolation.</li>
+                <li>Integration Testing: Ensures units work correctly when combined (e.g., checking database communication).</li>
+                <li>System Testing Verifies the complete, integrated system meets all specified requirements (end-to-end scenarios).</li>
+                <li>Acceptance Testing (UAT): Final stage, often by end-users, to ensure the system satisfies business requirements.</li>
             </ul>
             
             <h4>Types of Testing: Structure vs. Function</h4>
             <ul>
-                <li>**Black-Box Testing:** Focuss on functionality only (like an end-user).</li>
-                <li>**White-Box Testing:** Requires knowledge of the internal code structure and logic (used by developers).</li>
-                <li>**Gray-Box Testing:** A combination, using some knowledge of internal structure but testing externally.</li>
+                <li>Black-Box Testing: Focuss on functionality only (like an end-user).</li>
+                <li>White-Box Testing: Requires knowledge of the internal code structure and logic (used by developers).</li>
+                <li>Gray-Box Testing: A combination, using some knowledge of internal structure but testing externally.</li>
             </ul>
 
             <h3>Real-Life Applications Across the IT Industry</h3>
             <p>Testing is the glue that holds all IT sectors together, mitigating risks from minor inconvenience to catastrophic failure.</p>
             
             <h4>Importance in Financial and Healthcare Sectors</h4>
-            <p>**Banking and Finance** require automated regression testing to prevent errors in transaction logic. **Healthcare** demands life-critical system testing for EHRs and medical devices to ensure accurate data exchange and patient safety.</p>
+            <p>Banking and Finance require automated regression testing to prevent errors in transaction logic. Healthcare demands life-critical system testing for EHRs and medical devices to ensure accurate data exchange and patient safety.</p>
             
             <h4>Role in E-Commerce and Cloud Services</h4>
-            <p>**E-Commerce** relies on **Performance Testing** (stress and load testing) to handle peak traffic. **Cloud Services** (SaaS) require rigorous **Security Testing** (penetration testing) to protect user data and ensure service availability.</p>
+            <p>E-Commerce relies on Performance Testing (stress and load testing) to handle peak traffic. Cloud Services (SaaS) require rigorous Security Testing (penetration testing) to protect user data and ensure service availability.</p>
 
             <h3>Why Testing is Fundamental to Computer Science and Business</h3>
             <p>Testing drives discipline and reduces overall project costs.</p>
             
             <h4>Impact on Software Engineering Quality</h4>
-            <p>The need to write **testable code** encourages better software design, leading to modular, maintainable, and scalable codebases. It is crucial for **Risk Mitigation**, as the cost of fixing a bug increases exponentially the later it is discovered.</p>
+            <p>The need to write testable code encourages better software design, leading to modular, maintainable, and scalable codebases. It is crucial for Risk Mitigati, as the cost of fixing a bug increases exponentially the later it is discovered.</p>
             
             <h4>Business and Project Management Value</h4>
-            <p>Testing ensures **Customer Satisfaction** and enables **Agile and DevOps**. Rapid deployment is only possible because of **continuous testing** and automation, which prevent instability.</p>
+            <p>Testing ensures Customer Satisfaction and enables Agile and DevOps. Rapid deployment is only possible because of continuous testing and automation, which prevent instability.</p>
 
             <p>In conclusion, software testing has evolved into a continuous, integrated discipline—the professional guardian of quality that ensures every line of code performs as promised.</p>
         `
@@ -222,57 +222,57 @@ const articleData = {
     'finite-automata': {
         title: 'The Foundational Power of Finite Automata: Pattern Recognition in Computing',
         content: `
-            <p>The **Finite Automaton (FA)**, a fundamental structure from discrete mathematics, is the simplest model in the Theory of Computation. Built on states and transitions, it’s an abstract machine designed to recognize patterns within strings of symbols. This core concept explains how search engines highlight keywords and how compilers validate code structure.</p>
+            <p>The Finite Automaton (FA), a fundamental structure from discrete mathematics, is the simplest model in the Theory of Computation. Built on states and transitions, it’s an abstract machine designed to recognize patterns within strings of symbols. This core concept explains how search engines highlight keywords and how compilers validate code structure.</p>
 
             <h3>Conceptual Breakdown: States, Transitions, and Memory Limits</h3>
             
             <h4>The Core Mechanics of an FA</h4>
-            <p>An FA exists in a **fixed number of states** and reads input symbols sequentially. Based on its current state and the input, it moves to the next state. Crucially, the FA has **no extra memory**; it only remembers its current state. If it finishes reading the input and lands in an **accepting state**, the pattern is recognized.</p>
+            <p>An FA exists in a fixed number of state and reads input symbols sequentially. Based on its current state and the input, it moves to the next state. Crucially, the FA has no extra memory; it only remembers its current state. If it finishes reading the input and lands in an accepting state, the pattern is recognized.</p>
             
             <h4>DFA vs. NFA</h4>
-            <p>The **Deterministic Finite Automaton (DFA)** has exactly one defined transition for every input symbol. The **Non-deterministic Finite Automaton (NFA)** allows for multiple transitions for the same symbol, offering flexibility. NFAs are often converted to equivalent DFAs for **efficient execution**.</p>
+            <p>The Deterministic Finite Automaton (DFA) has exactly one defined transition for every input symbol. The Non-deterministic Finite Automaton (NFA) allows for multiple transitions for the same symbol, offering flexibility. NFAs are often converted to equivalent DFAs for efficient execution.</p>
 
             <h3>Real-Life Applications: Text Search and Regular Expressions</h3>
             
             <h4>Blazing-Fast String Searching</h4>
-            <p>FA models are used in basic **"Find" functions** in text editors. A dedicated DFA is constructed to recognize the search term, providing **blazing-fast, linear-time performance** because the next action is always known instantly.</p>
+            <p>FA models are used in basic "Find" functions** in text editors. A dedicated DFA is constructed to recognize the search term, providing blazing-fast, linear-time performance because the next action is always known instantly.</p>
             
             <h4>The Engine Behind Regular Expressions (Regex)</h4>
-            <p>**Regular Expressions (regex)** are the algebraic notation programmers use to define complex text patterns (like validating emails). Every regex can be formally translated into an equivalent DFA. This conversion replaces inefficient backtracking with a **highly efficient, predictable state machine**. Modern compilers, editors, and command-line tools rely on this mechanism.</p>
+            <p>Regular Expressions (regex) are the algebraic notation programmers use to define complex text patterns (like validating emails). Every regex can be formally translated into an equivalent DFA. This conversion replaces inefficient backtracking with a highly efficient, predictable state machine. Modern compilers, editors, and command-line tools rely on this mechanism.</p>
             
             <h3>Importance in Computer Science and IT</h3>
             
             <h4>Defining Computational Limits</h4>
-            <p>FAs define **regular languages**, the simplest languages a machine can recognize. Understanding what an FA **cannot** do (e.g., it cannot count arbitrary amounts of information) provides insight into the necessary complexity for solving other problems.</p>
+            <p>FAs define regular languages, the simplest languages a machine can recognize. Understanding what an FA cannot do (e.g., it cannot count arbitrary amounts of information) provides insight into the necessary complexity for solving other problems.</p>
             
             <h4>Compiler Design and Security</h4>
-            <p>In **compiler design**, the FA is perfectly suited for **lexical analysis**, the initial phase where the compiler identifies **tokens** (keywords, variables). This ensures predictable, reliable speed. In **network security**, high-speed applications like **Intrusion Detection Systems (IDS)** use automata to rapidly check network packets against databases of known attack signatures in real time.</p>
+            <p>In compiler design, the FA is perfectly suited for lexical analysis, the initial phase where the compiler identifies tokens (keywords, variables). This ensures predictable, reliable speed. In network security, high-speed applications like Intrusion Detection Systems (IDS) use automata to rapidly check network packets against databases of known attack signatures in real time.</p>
         `
     },
     'ai-cybersecurity': {
         title: 'The Transformative Role of AI in Modern Cybersecurity',
         content: `
-            <p>In the relentless, evolving landscape of cyber threats, traditional, signature-based defenses are struggling to keep pace. **Artificial Intelligence (AI)** and **Machine Learning (ML)** are foundational elements driving the next generation of cybersecurity practices by shifting defense from reactive to proactive.</p>
+            <p>In the relentless, evolving landscape of cyber threats, traditional, signature-based defenses are struggling to keep pace. Artificial Intelligence (AI) and Machine Learning (ML) are foundational elements driving the next generation of cybersecurity practices by shifting defense from reactive to proactive.</p>
 
             <h3>Core Applications of AI in Cybersecurity</h3>
             
             <h4>1. Enhanced Threat Detection and Anomaly Hunting</h4>
-            <p>AI establishes a **User and Entity Behavior Analytics (UEBA)** baseline of "normal" activity to detect subtle, statistically significant deviations. **Malware Analysis** uses ML models to analyze file properties and determine the probability of a threat, even if the signature is new.</p>
+            <p>AI establishes a User and Entity Behavior Analytics (UEBA) baseline of "normal" activity to detect subtle, statistically significant deviations. Malware Analysis uses ML models to analyze file properties and determine the probability of a threat, even if the signature is new.</p>
             
             <h4>2. Automated Incident Response (SOAR)</h4>
-            <p>AI provides the intelligence layer for **Security Orchestration, Automation, and Response (SOAR)** platforms. It automatically handles **Triage and Prioritization** of alerts and executes **Automated Containment** actions (like isolating an endpoint), cutting the Mean Time to Respond (MTTR).</p>
+            <p>AI provides the intelligence layer for Security Orchestration, Automation, and Response (SOAR) platforms. It automatically handles Triage and Prioritization of alerts and executes Automated Containment actions (like isolating an endpoint), cutting the Mean Time to Respond (MTTR).</p>
             
             <h4>3. Intelligent Vulnerability Management</h4>
-            <p>AI helps prioritize patching based on the **Risk-Based Prioritization**—analyzing asset nature, threat intelligence, and typical attacker patterns—to focus on the *actual business risk* posed by a vulnerability.</p>
+            <p>AI helps prioritize patching based on the Risk-Based Prioritization—analyzing asset nature, threat intelligence, and typical attacker patterns—to focus on the actual business risk posed by a vulnerability.</p>
 
             <h3>Importance and Impact on the IT Industry</h3>
             <p>AI addresses the industry's biggest challenges: data volume and the skills gap.</p>
             
             <h4>Driving Operational Efficiency</h4>
-            <p>AI enables **Scalability** to monitor trillions of events, a task impossible for human teams alone. By automating routine work, it allows skilled analysts to focus on complex threat hunting, **Focusing Human Talent** effectively.</p>
+            <p>AI enables Scalability to monitor trillions of events, a task impossible for human teams alone. By automating routine work, it allows skilled analysts to focus on complex threat hunting, Focusing Human Talent effectively.</p>
             
             <h4>The Future of Defensive Security</h4>
-            <p>AI will evolve into a collaborative defense partner, enabling **Predictive Defense** by anticipating attack types before they are launched. It will also be essential for securing emerging technologies like quantum computing and vast IoT systems (**Security for AI**).</p>
+            <p>AI will evolve into a collaborative defense partner, enabling Predictive Defense by anticipating attack types before they are launched. It will also be essential for securing emerging technologies like quantum computing and vast IoT systems (Security for AI).</p>
 
             <p>In conclusion, the integration of AI is the only scalable, intelligent solution capable of confronting contemporary digital threats, making it crucial for survival and competitive edge in the modern IT world.</p>
         `
@@ -290,7 +290,47 @@ const videoData = {
         title: 'SLA Stage 3 - DWM',
         // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1XyiyNYVVyUqWHs8O0ip3n0ToLxE9poIy/preview' 
-    }
+    },
+    'tccd-sla-stage-2': {
+        title: 'SLA Stage 2 - TC&CD',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1RFUMwwwQa9MmaH3ibnTISYIcXOKMZDov/preview' 
+    },
+    'tccd-sla-stage-3': {
+        title: 'SLA Stage 3 - TC&CD',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1x5GTcIWNtBmMpOWWX_-i5MYkjrCAugsI/preview' 
+    },
+    'cspp-sla-stage-2': {
+        title: 'SLA Stage 2 - CSPP',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1pdx__P-CRdfTehFdIhWdDwlqJKbwt_XZ/preview'
+    },
+    'cspp-sla-stage-3': {
+        title: 'SLA Stage 3 - CSPP',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1Jsl4mNsxtDTeWOssL51-APPwQFScRnbB/preview'
+    },
+    'sepm-sla-stage-2': {
+        title: 'SLA Stage 2 - SEPM',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1AuHWaxA1KOOGUa9QnezvSOmaDqo_otB2/preview'
+    },
+    'sepm-sla-stage-3': {
+        title: 'SLA Stage 3 - SEPM',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1PbOeUsY79k0GALJ0TdzAZGrDlkBAQiEa/preview'
+    },
+    'ccidf-sla-stage-2': {
+        title: 'SLA Stage 2 - CCIDF',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/16dGeSTqDMxon8zE_b85qiSO-XHer64aI/preview'
+    },
+    'ccidf-sla-stage-3': {
+        title: 'SLA Stage 3 - CCIDF',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1xq-7KAnuzpWc2-jwEsmT8uRrJjjMfX7-/preview'
+    },
     // ... add more videos here later:
 };  
 
