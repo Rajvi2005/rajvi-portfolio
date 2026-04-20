@@ -276,6 +276,39 @@ const articleData = {
 
             <p>In conclusion, the integration of AI is the only scalable, intelligent solution capable of confronting contemporary digital threats, making it crucial for survival and competitive edge in the modern IT world.</p>
         `
+    },
+     'cryptography-in-cybersecurity': {
+        title: 'The Invisible Shield: The Role of Cryptography in Modern Cybersecurity',
+        content: `
+            <p>Every time you open a banking app, send a secure message, or enter a password online, an invisible shield protects you: cryptography. In a world of increasingly sophisticated cyber threats, cryptography stands as the fundamental pillar of cybersecurity. It is the science of securing information by transforming readable plaintext into unreadable ciphertext using complex mathematical algorithms and secret keys.</p>
+
+            <h3>The Four Essential Functions in Cybersecurity</h3>
+            
+            <h4>Confidentiality and Integrity</h4>
+            <p>Cryptography ensures <strong>Confidentiality</strong>, meaning only authorized parties with the correct key can access sensitive information. It also guarantees data <strong>Integrity</strong> through cryptographic hash functions. These functions verify that data hasn't been altered during transmission; if even a single character is tampered with, the resulting hash value changes completely.</p>
+            
+            <h4>Authentication and Non-Repudiation</h4>
+            <p>Digital certificates and cryptographic signatures provide <strong>Authentication</strong> by verifying the true identity of users, devices, and servers, effectively preventing man-in-the-middle attacks. Additionally, digital signatures ensure <strong>Non-Repudiation</strong>, meaning a sender cannot falsely deny having sent a message or completed a financial transaction.</p>
+
+            <h3>Core Cryptographic Techniques</h3>
+            
+            <h4>1. Symmetric Cryptography (Private Key)</h4>
+            <p>Symmetric cryptography uses the exact same key to both encrypt and decrypt data. Because it is highly fast and efficient, it is ideal for encrypting large volumes of data. The Advanced Encryption Standard (AES) is the most widely used algorithm here, securing Wi-Fi (WPA2), full-disk encryption, and VPNs. However, securely distributing the single secret key remains its primary challenge.</p>
+            
+            <h4>2. Asymmetric Cryptography (Public Key)</h4>
+            <p>Asymmetric cryptography solves the key distribution problem by utilizing a mathematically linked key pair: a public key (shared openly) and a private key (kept secret). Algorithms like RSA and the highly efficient Elliptic Curve Cryptography (ECC) ensure that data encrypted with a public key can only be decrypted by the corresponding private key. This is the foundation of secure internet communication and the Diffie-Hellman Key Exchange.</p>
+
+            <h4>3. Hashing</h4>
+            <p>Unlike encryption, hashing is a one-way cryptographic function that produces a fixed-length output (a hash or digest) from any input. It cannot be reversed. Modern hash functions like SHA-256 are critical for safe password storage, blockchain mining (like Bitcoin), and verifying the integrity of downloaded software.</p>
+
+            <h3>Real-World Applications and the Quantum Threat</h3>
+            
+            <h4>Everyday Security</h4>
+            <p>Cryptography powers daily digital interactions. It secures web traffic via <strong>HTTPS/TLS</strong>, provides end-to-end encryption to keep <strong>WhatsApp and Signal</strong> messages private, authenticates software via <strong>Digital Signatures</strong>, and heavily encrypts vaults inside <strong>Password Managers</strong>.</p>
+            
+            <h4>Navigating the Quantum Horizon</h4>
+            <p>While poor key management and human error are persistent vulnerabilities, the ultimate long-term threat is quantum computing. Quantum computers utilizing Shor's Algorithm could theoretically break standard RSA and ECC encryptions in polynomial time. To protect the future of digital trust, the industry is already shifting toward NIST-standardized post-quantum cryptographic algorithms designed specifically to withstand these advanced attacks.</p>
+        `
     }
 };
 
@@ -330,6 +363,16 @@ const videoData = {
         title: 'SLA Stage 3 - CCIDF',
         // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1xq-7KAnuzpWc2-jwEsmT8uRrJjjMfX7-/preview'
+    },
+      'cns-sla-stage-2': {
+        title: 'SLA Stage 2 - CNS',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1fmUxIHnxOH4QhMhl1rl-nqZcsgNfBsDK/preview'
+    },
+    'cns-sla-stage-3': {
+        title: 'SLA Stage 3 - CNS',
+        // --- THIS IS THE CORRECTED LINE ---
+        iframeSrc: 'https://drive.google.com/file/d/1_YZBdotEbAGZJB3kKn-m36_XCSxm4b55/preview'
     },
     // ... add more videos here later:
 };  
