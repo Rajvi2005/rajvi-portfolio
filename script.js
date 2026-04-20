@@ -277,7 +277,7 @@ const articleData = {
             <p>In conclusion, the integration of AI is the only scalable, intelligent solution capable of confronting contemporary digital threats, making it crucial for survival and competitive edge in the modern IT world.</p>
         `
     },
-     'cryptography-in-cybersecurity': {
+    'cryptography-in-cybersecurity': {
         title: 'The Invisible Shield: The Role of Cryptography in Modern Cybersecurity',
         content: `
             <p>Every time you open a banking app, send a secure message, or enter a password online, an invisible shield protects you: cryptography. In a world of increasingly sophisticated cyber threats, cryptography stands as the fundamental pillar of cybersecurity. It is the science of securing information by transforming readable plaintext into unreadable ciphertext using complex mathematical algorithms and secret keys.</p>
@@ -316,69 +316,56 @@ const articleData = {
 const videoData = {
     'sla-stage-2': {
         title: 'SLA Stage 2 - DWM',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1-YHfhVrcoy8CspynLPN4GlDYKQ49Qmyw/preview' 
     },
     'sla-stage-3': {
         title: 'SLA Stage 3 - DWM',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1XyiyNYVVyUqWHs8O0ip3n0ToLxE9poIy/preview' 
     },
     'tccd-sla-stage-2': {
         title: 'SLA Stage 2 - TC&CD',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1RFUMwwwQa9MmaH3ibnTISYIcXOKMZDov/preview' 
     },
     'tccd-sla-stage-3': {
         title: 'SLA Stage 3 - TC&CD',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1x5GTcIWNtBmMpOWWX_-i5MYkjrCAugsI/preview' 
     },
     'cspp-sla-stage-2': {
         title: 'SLA Stage 2 - CSPP',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1pdx__P-CRdfTehFdIhWdDwlqJKbwt_XZ/preview'
     },
     'cspp-sla-stage-3': {
         title: 'SLA Stage 3 - CSPP',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1Jsl4mNsxtDTeWOssL51-APPwQFScRnbB/preview'
     },
     'sepm-sla-stage-2': {
         title: 'SLA Stage 2 - SEPM',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1AuHWaxA1KOOGUa9QnezvSOmaDqo_otB2/preview'
     },
     'sepm-sla-stage-3': {
         title: 'SLA Stage 3 - SEPM',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1PbOeUsY79k0GALJ0TdzAZGrDlkBAQiEa/preview'
     },
     'ccidf-sla-stage-2': {
         title: 'SLA Stage 2 - CCIDF',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/16dGeSTqDMxon8zE_b85qiSO-XHer64aI/preview'
     },
     'ccidf-sla-stage-3': {
         title: 'SLA Stage 3 - CCIDF',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1xq-7KAnuzpWc2-jwEsmT8uRrJjjMfX7-/preview'
     },
-      'cns-sla-stage-2': {
+    'cns-sla-stage-2': {
         title: 'SLA Stage 2 - CNS',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1fmUxIHnxOH4QhMhl1rl-nqZcsgNfBsDK/preview'
     },
     'cns-sla-stage-3': {
         title: 'SLA Stage 3 - CNS',
-        // --- THIS IS THE CORRECTED LINE ---
         iframeSrc: 'https://drive.google.com/file/d/1_YZBdotEbAGZJB3kKn-m36_XCSxm4b55/preview'
-    },
-    // ... add more videos here later:
-};  
+    }
+};
 
 // Define keys in the order they appear in the HTML
-const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity']; 
+const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity', 'cryptography-in-cybersecurity']; 
 
 // Utility function to close all modals and stop video playback
 function closeModal() {
@@ -416,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // Add modal styles (The original script did this via a <style> tag, mimicking that here for safety)
+    // Add modal styles
     const style = document.createElement('style');
     style.textContent = `
         .modal {
@@ -516,8 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-
-    // 1. Article Modal Handler (Existing functionality)
+    // 1. Article Modal Handler
     document.querySelectorAll('.read-more').forEach((link, index) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -533,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Video Modal Handler (NEW functionality)
+    // 2. Video Modal Handler
     document.querySelectorAll('.view-video').forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
