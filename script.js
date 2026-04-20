@@ -309,10 +309,28 @@ const articleData = {
             <h4>Navigating the Quantum Horizon</h4>
             <p>While poor key management and human error are persistent vulnerabilities, the ultimate long-term threat is quantum computing. Quantum computers utilizing Shor's Algorithm could theoretically break standard RSA and ECC encryptions in polynomial time. To protect the future of digital trust, the industry is already shifting toward NIST-standardized post-quantum cryptographic algorithms designed specifically to withstand these advanced attacks.</p>
         `
+    },
+    'aws-security': {
+        title: 'Securing AWS Cloud: Threat Monitoring & Incident Response',
+        content: `
+            <p>This document considers the critical issues and perspectives involved in securing enterprise infrastructure through AWS services. As cloud computing is on the rise, traditional methods of securing systems have failed. It has thus been recognized that security in the cloud context includes surveillance, automating security holes, and even coding in case of emergencies.</p>
+
+            <h3>AWS Threat Detection Process</h3>
+            <p>AWS threat detection process involves the usage of <strong>Amazon GuardDuty</strong> – an advanced solution that analyzes security aspects of AWS accounts, resources, and the information contained within Amazon S3. The analysis of these elements takes place due to the application of certain mechanisms such as machine learning, anomaly detection, and threat intelligence feeds. Thanks to the application of the mentioned techniques, one can detect malicious operations such as attacks on gaining unauthorized access to cloud-based information, hackings of EC2 instances, and cryptomining. Besides, it is worth mentioning <strong>AWS Security Hub</strong> because it serves as a central point where alerts from other solutions such as Amazon GuardDuty and Amazon Inspector are collected.</p>
+            
+            <h3>Infrastructure and Application Security</h3>
+            <p>Moreover, the article connects infrastructure security and application security by illustrating the use of AWS Inspector and AWS Web Application Firewall (WAF). <strong>AWS Inspector</strong> is used to discover software vulnerabilities in compute instances and registries of containers through automation. On the other hand, <strong>AWS WAF</strong> is utilized in safeguarding applications from threats such as SQL injection and XSS attacks.</p>
+            
+            <h3>Automation of Incident Responses</h3>
+            <p>One major point worth noting in the article is the examination of automation of incident responses. It provides details on how automation of processes such as isolating impacted machines, capturing snapshots of impacted data volumes, and notifying security personnel can be achieved using cloud services such as <strong>AWS Step Functions</strong> and <strong>EventBridge</strong>.</p>
+            
+            <h3>IAM: The New Security Perimeter</h3>
+            <p>The final part of the article highlights the critical aspect of <strong>IAM (Identity and Access Management)</strong> being the new security perimeter. By practicing least privilege, Permission Boundaries, and issuing temporary permissions, companies would be able to strengthen their control planes. In conclusion, it would be crucial for one to learn how to use these AWS security services to become knowledgeable about cybersecurity risks.</p>
+        `
     }
 };
 
-// ==================== Video Modal Data (NEW) ====================
+// ==================== Video Modal Data ====================
 const videoData = {
     'sla-stage-2': {
         title: 'SLA Stage 2 - DWM',
@@ -361,11 +379,19 @@ const videoData = {
     'cns-sla-stage-3': {
         title: 'SLA Stage 3 - CNS',
         iframeSrc: 'https://drive.google.com/file/d/1_YZBdotEbAGZJB3kKn-m36_XCSxm4b55/preview'
+    },
+    'cmcs-sla-stage-2': {
+        title: 'SLA Stage 2 - CMCS',
+        iframeSrc: 'https://drive.google.com/file/d/1hSua6JI_58_jEwa4UipqGGKfgM-TWhNt/preview'
+    },
+    'cmcs-sla-stage-3': {
+        title: 'SLA Stage 3 - CMCS',
+        iframeSrc: 'https://drive.google.com/file/d/1nM0iylkzRtm1mB_XWEvbp-VJNrEiNtan/preview'
     }
 };
 
 // Define keys in the order they appear in the HTML
-const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity', 'cryptography-in-cybersecurity']; 
+const articleKeys = ['etl', 'digital-forensics', 'software-testing', 'finite-automata', 'ai-cybersecurity', 'cryptography-in-cybersecurity', 'aws-security']; 
 
 // Utility function to close all modals and stop video playback
 function closeModal() {
