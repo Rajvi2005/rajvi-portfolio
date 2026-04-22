@@ -133,7 +133,7 @@ const articleData = {
             <h3>2. Step-by-Step Breakdown of the ETL Process</h3>
             <h4>Step 1: Extract</h4>
             <p>Data extraction involves pulling raw data from multiple, often diverse sources. These sources can include: Operational databases (like MySQL, Oracle, or PostgreSQL), ERP or CRM systems, Cloud platforms, and Flat files or spreadsheets. The goal is to collect all relevant data efficiently without making changes yet.</p>
-            <blockquote>Example: A retail company extracts daily sales data from its e-commerce website, inventory details from its ERP system, and customer information from its CRM platform.</blockquote>
+            <blockquote>Example: A retail company extracts daily sales data from its e-commerce website, inventory details from its ERP system, and customer information from CRM platform.</blockquote>
             <h4>Step 2: Transform</h4>
             <p>Transformation is the core of the ETL process. It involves cleaning and restructuring data. Common tasks include: Data Cleaning (removing duplicates), Data Integration (merging data), **Data Aggregation** (summarizing data), and Data Validation. This phase often uses data transformation tools such as Apache Spark, Talend, or AWS Glue.</p>
             <h4>Step 3: Load</h4>
@@ -428,6 +428,14 @@ const videoData = {
     'cmcs-sla-stage-3': {
         title: 'SLA Stage 3 - CMCS',
         iframeSrc: 'https://drive.google.com/file/d/1nM0iylkzRtm1mB_XWEvbp-VJNrEiNtan/preview'
+    },
+    'pentest-sla-stage-2': {
+        title: 'SLA Stage 2 - Pentest',
+        iframeSrc: 'https://drive.google.com/file/d/1BFRg9vAJasA5j6tDzffVEjp-AOKSCRFu/preview'
+    },
+    'pentest-sla-stage-3': {
+        title: 'SLA Stage 3 - Pentest',
+        iframeSrc: 'https://drive.google.com/file/d/1m3hXfbhBBEYqAzeOOz9nwJux9JVadRJU/preview'
     }
 };
 
